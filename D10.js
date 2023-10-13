@@ -511,18 +511,20 @@ const addTagTr = () => {
   ***
 
 */
-const halfTree = () => {
+const halfTree = (num) => {
   let stars = "";
   let v = 0;
-  for (let i = 1; i < 4; i++) {
+  for (let i = 0; i < num * 2; i++) {
     while (v < i) {
       stars += "*";
       v++;
     }
-    console.log(stars);
+    if (i % 2 !== 0) {
+      console.log(stars);
+    }
   }
 };
-halfTree();
+halfTree(5);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -539,7 +541,7 @@ const tree = (num) => {
   let stars = "";
   let v = 0;
 
-  for (let i = 1; i < num * 2; i++) {
+  for (let i = 0; i < num * 2; i++) {
     while (v < i) {
       stars += "*";
       v++;
@@ -548,13 +550,13 @@ const tree = (num) => {
     let spaces = "";
     stars = stars.replace(" ", "");
 
-    for (let i = num; i > num; i--) {
+    for (let k = num; k > 0; k--) {
       spaces += " ";
     }
-    stars = spaces + stars;
 
     if (i % 2 !== 0) {
       console.log(stars);
+      stars = spaces + stars;
     }
   }
 };
